@@ -11,7 +11,7 @@ from sklearn.preprocessing import OrdinalEncoder,StandardScaler
 from src.exception import CustomException
 from src.logger import logging
 import os
-from src.utils import save_obj
+from src.utils import save_object
 
 @dataclass
 class DataTransformationconfig:
@@ -108,7 +108,7 @@ class DataTransformation:
             train_arr = np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
-            save_obj (
+            save_object (
 
                 file_path = self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
